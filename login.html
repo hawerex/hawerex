@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Login - Hawerex</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="form-container">
-    <h2>Login</h2>
-    <form id="loginForm">
-      <input type="text" placeholder="Usuário" id="loginUsuario" required />
-      <input type="password" placeholder="Senha" id="loginSenha" required />
-      <button type="submit">Entrar</button>
-    </form>
-    <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+// LOGIN
+document.getElementById("loginForm")?.addEventListener("submit", function(e) {
+  e.preventDefault();
+  const usuario = document.getElementById("loginUsuario").value.trim();
+  const senha = document.getElementById("loginSenha").value;
+
+  const dadosSalvos = JSON.parse(localStorage.getItem("hawerexUser"));
+
+  if (dadosSalvos &&
+      usuario === dadosSalvos.usuario &&
+      senha === dadosSalvos.senha) {
+    alert("Login bem-sucedido!");
+    window.location.href = "index.html"; // Redireciona para o início
+  } else {
+    alert("Usuário ou senha incorretos.");
+  }
+});
