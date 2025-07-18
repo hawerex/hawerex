@@ -28,3 +28,4 @@ document.getElementById("loginForm")?.addEventListener("submit", function(e) {
     alert("Usuário ou senha incorretos.");
   }
 });
+window.location.href = "index.html";
