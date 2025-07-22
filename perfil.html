@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Perfil - Hawerex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #198754;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #198754;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .save-btn {
+      background-color: #198754;
+      color: white;
+    }
+
+    .save-btn:hover {
+      background-color: #146c43;
+    }
+
+    .logout-btn {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .logout-btn:hover {
+      background-color: #b02a37;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Meu Perfil</h1>
+  </header>
+
+  <main>
+    <h2>Informações da Conta</h2>
+    <form id="perfilForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" required />
+
+      <button type="submit" class="save-btn">Salvar Alterações</button>
+      <button type="button" class="logout-btn" onclick="logout()">Sair da Conta</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 Hawerex
+  </footer>
+
+  <script>
+    const form = document.getElementById("perfilForm");
+
+    // Carrega os dados salvos
+    window.onload = function() {
+      const user = JSON.parse(localStorage.getItem("usuario"));
+      if (!user) {
+        alert("Você precisa estar logado.");
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("nome").value = user.nome;
+        document.getElementById("email").value = user.email;
+        document.getElementById("senha").value = user.senha;
+      }
+    };
+
+    // Salva alterações
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const novoUsuario = {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        senha: document.getElementById("senha").value,
+      };
+      localStorage.setItem("usuario", JSON.stringify(novoUsuario));
+      alert("Alterações salvas com sucesso!");
+      window.location.href = "index.html";
+    });
+
+    function logout() {
+      localStorage.removeItem("usuario");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
