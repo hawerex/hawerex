@@ -1,17 +1,89 @@
-// LOGIN
-document.getElementById("loginForm")?.addEventListener("submit", function(e) {
-  e.preventDefault();
-  const usuario = document.getElementById("loginUsuario").value.trim();
-  const senha = document.getElementById("loginSenha").value;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Hawerex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      padding: 40px;
+    }
 
-  const dadosSalvos = JSON.parse(localStorage.getItem("hawerexUser"));
+    h2 {
+      text-align: center;
+      color: #198754;
+    }
 
-  if (dadosSalvos &&
-      usuario === dadosSalvos.usuario &&
-      senha === dadosSalvos.senha) {
-    alert("Login bem-sucedido!");
-    window.location.href = "index.html"; // Redireciona para o início
-  } else {
-    alert("Usuário ou senha incorretos.");
-  }
-});
+    form {
+      background: white;
+      padding: 25px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #198754;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #146c43;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Login do Usuário</h2>
+  <form id="loginForm">
+    <label for="email">Email</label>
+    <input type="email" id="email" required />
+
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" required />
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      const user = JSON.parse(localStorage.getItem("usuario"));
+
+      if (user && user.email === email && user.senha === senha) {
+        alert("Login bem-sucedido!");
+        window.location.href = "index.html";
+      } else {
+        alert("Email ou senha incorretos!");
+      }
+    });
+  </script>
+</body>
+</html>
