@@ -1,130 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Hawerex - Início</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
       margin: 0;
-      background-color: #f0f0f0;
+      padding: 0;
     }
 
     header {
       background-color: #198754;
       color: white;
       padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .perfil {
-      position: relative;
-      cursor: pointer;
-    }
-
-    .perfil img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid white;
-    }
-
-    .perfil-info {
-      display: none;
-      position: absolute;
-      right: 0;
-      background: white;
-      color: black;
-      border: 1px solid #ccc;
-      padding: 10px;
-      border-radius: 5px;
-      top: 50px;
-      min-width: 200px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    .perfil-info p {
-      margin: 5px 0;
-    }
-
-    .auth-buttons a {
-      margin-left: 15px;
-      background-color: white;
-      color: #198754;
-      padding: 8px 15px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .auth-buttons a:hover {
-      background-color: #f0f0f0;
+      text-align: center;
     }
 
     main {
       padding: 30px;
       text-align: center;
     }
+
+    .perfil-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #avatarPerfil {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #198754;
+    }
+
+    .perfil-btn {
+      display: block;
+      margin: 15px auto;
+      background-color: #198754;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .perfil-btn:hover {
+      background-color: #146c43;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      margin-top: 40px;
+    }
   </style>
 </head>
-<body>
+<body onload="carregarUsuario()">
+
   <header>
-    <div class="logo">Hawerex</div>
-    <div class="perfil" id="perfilArea" onclick="togglePerfilInfo()">
-      <img id="avatarPerfil" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
-      <div class="perfil-info" id="perfilInfo">
-        <p><strong>Nome:</strong> <span id="perfilNome">Visitante</span></p>
-        <p><strong>Email:</strong> <span id="perfilEmail">-</span></p>
-        <a href="#" onclick="logout()">Sair</a>
-      </div>
-    </div>
-    <div class="auth-buttons" id="authButtons">
-      <a href="login.html">Login</a>
-      <a href="cadastro.html">Cadastrar</a>
-    </div>
+    <h1>Bem-vindo à Hawerex</h1>
   </header>
 
   <main>
-    <h1>Bem-vindo à Hawerex</h1>
-    <p>Soluções inteligentes, gratuitas e 100% brasileiras.</p>
+    <h2>Sistema Operacional, Softwares e Inovação</h2>
+    
+    <div class="perfil-container">
+      <img id="avatarPerfil" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+      <p id="nomeUsuario"></p>
+      <button class="perfil-btn" onclick="window.location.href='perfil.html'">Ver Perfil</button>
+      <button class="perfil-btn" onclick="window.location.href='login.html'">Login</button>
+      <button class="perfil-btn" onclick="window.location.href='cadastro.html'">Cadastrar</button>
+    </div>
   </main>
 
-  <script>
-    function togglePerfilInfo() {
-      const info = document.getElementById("perfilInfo");
-      info.style.display = info.style.display === "block" ? "none" : "block";
-    }
+  <footer>© 2025 Hawerex</footer>
 
-    function logout() {
-      localStorage.removeItem("usuario");
-      location.reload();
-    }
-
-    window.onload = function () {
-      const user = JSON.parse(localStorage.getItem("usuario"));
-      const authBtns = document.getElementById("authButtons");
-      const perfilArea = document.getElementById("perfilArea");
-
-      if (user) {
-        document.getElementById("perfilNome").innerText = user.nome;
-        document.getElementById("perfilEmail").innerText = user.email;
-        authBtns.style.display = "none";
-        perfilArea.style.display = "block";
-      } else {
-        perfilArea.style.display = "none";
-        authBtns.style.display = "block";
-      }
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
