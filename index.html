@@ -1,138 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hawerex - Soluções Inteligentes</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Hawerex - Início</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f1f1f1;
+      background-color: #f0f0f0;
     }
 
     header {
       background-color: #198754;
       color: white;
       padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
+    .logo {
+      font-size: 24px;
       font-weight: bold;
+    }
+
+    .perfil {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .perfil img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .perfil-info {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: white;
+      color: black;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      top: 50px;
+      min-width: 200px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .perfil-info p {
+      margin: 5px 0;
+    }
+
+    .auth-buttons a {
+      margin-left: 15px;
+      background-color: white;
+      color: #198754;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .auth-buttons a:hover {
+      background-color: #f0f0f0;
     }
 
     main {
       padding: 30px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #198754;
-    }
-
-    .info-boxes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .info-box {
-      background: white;
-      border-left: 5px solid #198754;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .info-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .button-container {
-      margin-top: 40px;
       text-align: center;
-    }
-
-    .button-link {
-      display: inline-block;
-      background-color: #198754;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      margin: 10px;
-      transition: background 0.3s ease;
-      border: 2px solid transparent;
-    }
-
-    .button-link:hover {
-      background-color: #145f45;
-      border-color: #0f5132;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #198754;
-      color: white;
-      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>HAWEREX</h1>
-    <nav>
-      <a href="index.html">Início</a>
+    <div class="logo">Hawerex</div>
+    <div class="perfil" id="perfilArea" onclick="togglePerfilInfo()">
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
+      <div class="perfil-info" id="perfilInfo">
+        <p><strong>Nome:</strong> <span id="perfilNome">Visitante</span></p>
+        <p><strong>Email:</strong> <span id="perfilEmail">-</span></p>
+        <a href="#" onclick="logout()">Sair</a>
+      </div>
+    </div>
+    <div class="auth-buttons" id="authButtons">
       <a href="login.html">Login</a>
-      <a href="cadastro.html">Cadastro</a>
-    </nav>
+      <a href="cadastro.html">Cadastrar</a>
+    </div>
   </header>
 
   <main>
-    <h2>Bem-vindo à Hawerex</h2>
-    <p>Confira os principais benefícios da nossa plataforma:</p>
-
-    <div class="info-boxes">
-      <div class="info-box">
-        <h3>🇧🇷 Sistema 100% Brasileiro</h3>
-        <p>Focado em praticidade, leveza e independência digital para o Brasil.</p>
-      </div>
-      <div class="info-box">
-        <h3>💰 Sem taxas abusivas</h3>
-        <p>Use nossos softwares sem depender de serviços internacionais caros.</p>
-      </div>
-      <div class="info-box">
-        <h3>⚙️ Compatibilidade total</h3>
-        <p>Funciona com programas internacionais através de soluções locais.</p>
-      </div>
-      <div class="info-box">
-        <h3>🛡️ Soluções seguras</h3>
-        <p>Login e cadastro simples com segurança local via JavaScript.</p>
-      </div>
-      <div class="info-box">
-        <h3>🚀 Acesso rápido e gratuito</h3>
-        <p>Site leve, sem servidor, que roda direto do navegador offline.</p>
-      </div>
-    </div>
-
-    <div class="button-container">
-      <a href="cadastro.html" class="button-link">Criar Conta</a>
-      <a href="login.html" class="button-link">Entrar</a>
-    </div>
+    <h1>Bem-vindo à Hawerex</h1>
+    <p>Soluções inteligentes, gratuitas e 100% brasileiras.</p>
   </main>
 
-  <footer>
-    <p>© 2025 Hawerex</p>
-  </footer>
+  <script>
+    function togglePerfilInfo() {
+      const info = document.getElementById("perfilInfo");
+      info.style.display = info.style.display === "block" ? "none" : "block";
+    }
+
+    function logout() {
+      localStorage.removeItem("usuario");
+      location.reload();
+    }
+
+    window.onload = function () {
+      const user = JSON.parse(localStorage.getItem("usuario"));
+      const authBtns = document.getElementById("authButtons");
+      const perfilArea = document.getElementById("perfilArea");
+
+      if (user) {
+        document.getElementById("perfilNome").innerText = user.nome;
+        document.getElementById("perfilEmail").innerText = user.email;
+        authBtns.style.display = "none";
+        perfilArea.style.display = "block";
+      } else {
+        perfilArea.style.display = "none";
+        authBtns.style.display = "block";
+      }
+    };
+  </script>
 </body>
 </html>
