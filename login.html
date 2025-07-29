@@ -1,58 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Hawerex</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    body {
-      font-family: Arial;
-      background-color: #f1f1f1;
-      text-align: center;
-      padding: 40px;
-    }
-
-    form {
-      background: white;
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-    }
-
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px auto;
-      display: block;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: #198754;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #146c43;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>Login na Hawerex</h2>
-  <form onsubmit="event.preventDefault(); loginUsuario();">
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="senha" placeholder="Senha" required />
-    <button type="submit">Entrar</button>
-  </form>
+  <header>
+    <img src="Hawerex-removebg-preview.png" alt="Logo Hawerex" class="logo" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cadastro.html">Cadastrar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="perfil-box">
+      <h2>Login</h2>
+      <input type="email" id="email" placeholder="Email" required><br><br>
+      <input type="password" id="senha" placeholder="Senha" required><br><br>
+      <button onclick="loginUsuario()">Entrar</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Hawerex | Suporte: matheuspereiradesouza878@gmail.com | WhatsApp: (87) 99102-1951</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
