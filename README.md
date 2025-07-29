@@ -1,64 +1,63 @@
-# 🌐 Hawerex - Plataforma Brasileira de Soluções Digitais
 
-Bem-vindo ao repositório oficial do projeto **Hawerex**, uma iniciativa brasileira para oferecer soluções tecnológicas locais que eliminam barreiras como taxas de importação, softwares limitados por região e altos custos com tecnologia estrangeira.
+🖥️🌐 Hawerex
 
-Este projeto inclui um sistema simples de **cadastro e login** 100% funcional em HTML, CSS e JavaScript puro — ideal para testes locais, protótipos ou aprendizado de desenvolvimento web.
+Bem-vindo ao repositório oficial do Hawerex!
+ 
+Hawerex é uma plataforma brasileira de soluções digitais, criada para tornar tecnologia acessível e descomplicada a todos. Nosso objetivo é eliminar barreiras como custos elevados, dependência de softwares estrangeiros e falta de opções nacionais.
 
----
+🚀 Objetivos do Projeto
 
-## 📌 Sobre o Projeto
+- Oferecer alternativas nacionais a serviços digitais populares
+- Facilitar o desenvolvimento e aprendizado de tecnologia no Brasil
+- Promover a inovação e independência digital
 
-A **Hawerex** nasceu da necessidade de tornar a tecnologia acessível no Brasil. Este site representa o começo: um sistema de autenticação local com páginas estáticas, que pode ser hospedado gratuitamente no GitHub Pages, Netlify ou Vercel.
+🧰 Funcionalidades
 
-### ✅ Recursos incluídos
+- Página institucional explicando a proposta da Hawerex
+- Sistema simples de cadastro e login de usuários
+- Armazenamento dos dados no navegador (LocalStorage)
+- Interface moderna e responsiva
+- Código limpo e comentado para facilitar o entendimento
 
-- Página institucional com os benefícios da Hawerex  
-- Página de **cadastro** (com email, nome de usuário e senha)  
-- Página de **login** (com validação local dos dados)  
-- Armazenamento com **LocalStorage** (sem servidor)  
-- Interface moderna com **CSS personalizado**  
-- Redirecionamento automático para o site após login  
-- Código limpo, comentado e fácil de editar  
+🛠️ Tecnologias Utilizadas
 
----
+- HTML: Estrutura das páginas
+- CSS: Estilização e responsividade
+- JavaScript: Lógica de cadastro, login e manipulação de dados
 
-## 🧱 Estrutura do Projeto
+🗂️ Estrutura de Arquivos
 
-hawerex-login-site/
-├── index.html # Página principal com benefícios e navegação
-├── cadastro.html # Tela de cadastro de novos usuários
-├── login.html # Tela de login
-├── style.css # Estilo visual do site (formulários, navegação etc)
-└── script.js # Lógica de cadastro e login em JavaScript puro
+hawerex/
+├── index.html      # Página principal institucional
+├── cadastro.html   # Página de cadastro de usuário
+├── login.html      # Página de login
+├── style.css       # Estilos do site
+└── script.js       # Lógica de cadastro/login
 
-⚙️ Como funciona o login e cadastro?
-Os dados preenchidos no formulário de cadastro são armazenados localmente no navegador com localStorage
+🔧 Como Usar
 
-No login, os dados digitados são comparados com os salvos
+1. Clone o repositório:
+git clone https://github.com/hawerex/hawerex.git
+2. Abra os arquivos HTML no seu navegador.
+3. Realize o cadastro e faça login para testar as funcionalidades.
+4. Os dados são armazenados localmente, não sendo enviados para servidores externos.
 
-Se estiver correto, o usuário é redirecionado para a página inicial
+⚠️ Aviso de Segurança
 
-Não há banco de dados, nem backend — tudo é local, offline e rápido
+Este sistema é para fins educacionais e prototipagem. Não use para dados reais de usuários! Para projetos profissionais, recomenda-se backend seguro, criptografia e HTTPS.
 
-🛡️ Aviso de Segurança
-Este projeto é para fins educacionais, testes e prototipagem.
-Não use esse sistema para guardar dados reais de usuários.
-Em aplicações reais, use autenticação segura com servidor, criptografia e HTTPS.
+👤 Autor
 
-👤 Desenvolvedor
-Matheus Pereira de Souza
-Fundador da Hawerex Tecnologia
-📧 Email: [matheuspereiradesouza878@gmail.com]
-📅 Projeto iniciado em: Julho de 2025
+Desenvolvido por [Matheus Pereira de Souza]
+
+(https://github.com/hawerex)  
+
+Contato: matheuspereiradesouza878@gmail.com
+ 
+📅 Início do projeto: Julho/2025
 
 📄 Licença
-Este projeto está licenciado sob a licença MIT.
-Você pode usar, copiar, modificar e distribuir livremente.
 
-💬 Contribua
-Se quiser ajudar a expandir o projeto, envie um fork ou abra uma issue com sugestões!
+Este projeto está sob licença MIT. Sinta-se livre para usar, modificar e contribuir!
 
-
----
-
-Se quiser, posso tentar novamente gerar o arquivo `.md` para download assim que a ferramenta estiver funcionando. Deseja que eu avise quando estiver disponível? ​:contentReference[oaicite:0]{index=0}​
+Se quiser adicionar tópicos específicos ou detalhes técnicos, me avise! Posso personalizar conforme suas necessidades.
