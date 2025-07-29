@@ -2,81 +2,48 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Hawerex - Início</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #198754;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    main {
-      padding: 30px;
-      text-align: center;
-    }
-
-    .perfil-container {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    #avatarPerfil {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 2px solid #198754;
-    }
-
-    .perfil-btn {
-      display: block;
-      margin: 15px auto;
-      background-color: #198754;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    .perfil-btn:hover {
-      background-color: #146c43;
-    }
-
-    footer {
-      text-align: center;
-      color: #888;
-      margin-top: 40px;
-    }
-  </style>
+  <title>Hawerex - Início</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body onload="carregarUsuario()">
 
   <header>
-    <h1>Bem-vindo à Hawerex</h1>
+    <img src="Hawerex-removebg-preview.png" alt="Logo Hawerex" class="logo" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="novidades.html">Novidades</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="perfil.html">Perfil</a>
+    </nav>
   </header>
 
-  <main>
-    <h2>Sistema Operacional, Softwares e Inovação</h2>
-    
-    <div class="perfil-container">
-      <img id="avatarPerfil" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Perfil">
-      <p id="nomeUsuario"></p>
-      <button class="perfil-btn" onclick="window.location.href='perfil.html'">Ver Perfil</button>
-      <button class="perfil-btn" onclick="window.location.href='login.html'">Login</button>
-      <button class="perfil-btn" onclick="window.location.href='cadastro.html'">Cadastrar</button>
-    </div>
+  <main class="home">
+    <section class="hero">
+      <h1>Bem-vindo à Hawerex</h1>
+      <p>Soluções tecnológicas acessíveis e avançadas para todos.</p>
+    </section>
+
+    <section class="info">
+      <h2>Novidades</h2>
+      <ul>
+        <li>Lançamento do Hawerex OS Ultra para notebooks leves</li>
+        <li>Novo painel de controle com dashboard integrado</li>
+        <li>Segurança offline com ferramentas de privacidade</li>
+      </ul>
+    </section>
+
+    <section class="about">
+      <h2>Sobre a Hawerex</h2>
+      <p>
+        A Hawerex é uma empresa brasileira que cria sistemas operacionais, apps e ferramentas digitais leves, seguras e offline. Nosso objetivo é democratizar a tecnologia com eficiência e inovação.
+      </p>
+    </section>
   </main>
 
-  <footer>© 2025 Hawerex</footer>
+  <footer>
+    <p>© 2025 Hawerex | Suporte: matheuspereiradesouza878@gmail.com | WhatsApp: (87) 99102-1951</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
